@@ -1,0 +1,17 @@
+section,
+.header,
+footer {
+    padding: 0 calc(50vw - 585px);
+    // padding: 0 calc(50vw - 45%);
+
+    @media screen and (max-width: 768px) {
+        padding: 0 calc(50vw - 350px);
+        
+    }
+    @media screen and (max-width: 576px) {
+        padding: 0 15px;
+    }
+    // @media screen and (max-width: 320px) {
+    //     padding: 0 calc(50vw - 150px);
+    // }
+}

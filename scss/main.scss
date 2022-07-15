@@ -1,0 +1,514 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "container";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font_family_main;
+    @include fontShort ($font_size_main, $font_weight_main, $font_color_main)
+}
+a {
+    text-decoration: none;
+}
+.header {
+    height: 15vh;
+    @include flexBox (flex, space-between, center);
+    margin: 0px auto;
+    position: relative;
+}
+.nav {
+    @include flexBox (flex, space-between, center);
+    width: max-content;
+    margin-left: auto;
+
+    &__menu {
+        position: relative;
+    }
+
+    &__burger {
+        display: none;
+        @media screen and (max-width: 768px) {
+            &:checked ~ .menu {
+                right: 0;
+            }
+            &:checked ~ .nav__burger-img {
+                transform: rotate(45deg);
+                &::before {
+                    opacity: 0;
+                }
+                &::after {
+                    top: 0;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    &__burger-img {
+        display: none;
+        @media screen and (max-width: 768px) {
+            display: inline-block;
+            width: 35px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            right: calc(50vw - 45%);
+            background-color: #637171;
+            vertical-align: middle;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 9px;
+                display: inline-block;
+                width: 100%;
+                height: 2px;
+                background: #637171;
+            }
+            &::after {
+                top: -9px;
+            }
+        }
+        @media screen and (max-width: 320px) {
+            right: calc(50vw - 150px);
+        }
+    }   
+}
+.menu {
+    @include flexBox (flex, space-between, center);
+    gap: 42px;
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        top: 97px;
+        right: 100%;
+        width: 50%;
+        flex-direction: column;
+        z-index: 3;
+        transition: all 0.3s linear;
+        min-width: 320px;
+        gap: 0;
+    }
+    &__item {
+        flex-grow: 1.5;
+        flex-shrink: 2;
+        @media screen and (max-width: 768px) {
+            padding: 18px 16px;
+            width: 90%;
+            background: linear-gradient(45deg, rgb(63, 217, 217), #739ddec2);
+            color: #fff;
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: center;
+        }
+    }
+    &__link {
+        text-decoration: none;
+        position: relative;
+        @include fontSmall (14px, 400, 0.3em, #000);
+    }
+
+    &__current:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        right: 15%;
+        height: 1px;
+        width: 70%;
+        background: #000000;
+    } 
+}
+.search {
+    margin-left: 7%;
+
+    @media screen and (max-width: 768px) {
+        margin-right: 15%;
+    }
+    &__form {
+        display: none;
+    }
+    &__input {
+        padding: 4px;
+        margin-top: 8px;
+        font-size: 14px;
+    }
+    &__button {
+        float: right;
+        padding: 6px 6px;
+        margin-top: 8px;
+        background: #ddd;
+        font-size: 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+.search:hover .search__form {
+    display: block;
+}
+.search:hover .search__image {
+    display: none;
+}
+.banner {
+    background: url(../img/banner-image.png) no-repeat center;
+    background-size: cover;
+    height: 85vh;
+    @media screen and (max-width: 320px) {
+        background: url(../img/bg-image-small.png) no-repeat center;
+        margin-bottom: 70px;
+    }
+    &__title {
+        margin: 0;
+        padding-top: 100px;
+    }
+}
+.main {
+    margin-bottom: 90px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 70px;
+    }
+}
+.section-1 {
+    &__article {
+        margin-top: 50px;
+    }
+}
+.section-title {
+    margin-bottom: 50px;
+    margin-top: 90px;
+    font-family: 'Red Hat Display', sans-serif;
+    @include fontMain (28px, 600, 46px, 0.1em, #000);
+    position: relative;
+    @media screen and (max-width: 768px) {
+        margin-top: 70px;
+    }
+    @media screen and (max-width: 768px) {
+        line-height: 36px;
+    }
+    &__link {
+        @include fontMain ($font_size_main, $font_weight_main, 27px, 0.1em, #7B7B7B);
+        font-family: $font_family_main;
+        position: absolute;
+        right: 0;
+
+        @media screen and (max-width: 320px) {
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+    } 
+    &_banner {
+        font-size: 48px;
+        line-height: 64px;
+        letter-spacing: 0.05em;
+            @media screen and (max-width: 768px) {
+                font-size: 36px;
+                line-height: 50px;
+                padding-top: 30px;
+            }
+            @media screen and (max-width: 320px) {
+                font-size: 30px;
+                line-height: 50px;
+                padding-top: 70px;
+            }
+        }
+    &_main {
+        @include fontMain (48px, 400, 64px, 0.05em, #000000);
+            @media screen and (max-width: 320px) {
+                text-align: center;
+            }
+    }
+}
+.article {
+    @include flexBox (flex, space-between, center);
+    gap: 30px; 
+    &_right {
+        flex-direction: row-reverse;
+    }
+    @media screen and (max-width: 768px) {
+        gap: 20px;
+    }
+    @media screen and (max-width: 320px) {
+        flex-direction: column;
+        gap: 37px;
+    }
+    &__picture {
+        width: 50%;
+        &_column {
+            width: 100%;
+        }
+        @media screen and (max-width: 320px) {
+            width: 100%;
+        }
+    }
+    &__img {
+        width: 100%;
+    }
+    &__text {
+        width: 50%;
+        &_column {
+            width: 100%
+        }
+        @media screen and (max-width: 320px) {
+            width: 100%;
+            order: -1;
+        }
+        &_width-right {
+            margin-right: 120px;
+            @media screen and (max-width: 768px) {
+                margin-right: 0;
+            }
+        }
+        &_width-left {
+            margin-left: 120px;
+            @media screen and (max-width: 768px) {
+                margin-left: 0;
+            }
+        }
+    }
+    &__title {
+        font-family: 'Red Hat Display', sans-serif;
+        @include fontMain (28px, 500, 38px, 0.1em, #000);
+        margin: 0;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 22px;
+        }
+    }   
+    &__tag,
+    &__date {
+        @include fontMain ($font_size_main, $font_weight_main, 27px, 0.1em, #7B7B7B);
+        font-family: $font_family_main;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    &__date {
+        margin-bottom: 50px;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__paragraph {
+        line-height: 27px;
+        letter-spacing: 0.05em;
+        margin: 0;
+    }
+}
+.section-2 {
+    &__articles {
+        @include flexBox (flex, space-between, normal);
+        gap: 30px;
+        @media screen and (max-width: 768px) {
+            display: block;
+        }
+    } 
+    &__article {
+        @include flexBox (flex, flex-start, flex-start);
+        margin-top: 50px;
+        margin-bottom: 30px;
+        flex-direction: column;
+        gap: 25px; 
+        margin-top: 0; 
+        flex-basis: 33%;
+        @media screen and (max-width: 768px) {
+            gap: 20px;
+            flex-direction: row;
+            flex-basis: auto;
+        }
+        @media screen and (max-width: 320px) {
+            flex-direction: column;
+            gap: 22px;
+        }
+        &_right {
+            @media screen and (max-width: 768px) {
+                flex-direction: row-reverse;
+            @media screen and (max-width: 320px) {
+                flex-direction: column;
+                gap: 37px;
+            }
+        }
+    }
+    &__heading {
+        @include flexBox (flex, space-between, center);
+    }
+    &__tag,
+    &__date {
+        font-size: 12px;
+        line-height: 20px;
+        margin: 0 0 25px 0;
+    }
+    &__title {
+        margin-bottom: 20px;
+    }
+    }
+    &__heading {
+        @include flexBox (flex, space-between, normal);
+    }
+    &__tag,
+    &__date {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 25px;
+    }
+    &__title {
+        font-size: 22px;
+        line-height: 37px;
+        margin-bottom: 20px;
+    }
+}
+.section-3 {
+    margin-bottom: 90px;
+    &__articles {
+        @include flexBox (flex, space-between, normal);
+        gap: 30px;
+        @media screen and (max-width: 320px) {
+            display: block;
+        }
+    } 
+    &__article {
+        @include flexBox (flex, flex-start, flex-start);
+        flex-direction: column;
+        gap: 20px; 
+        margin-top: 0; 
+        flex-basis: 50%;
+        @media screen and (max-width: 768px) {
+            gap: 20px;
+        }
+        &_right {
+            @media screen and (max-width: 768px) {
+                flex-direction: row-reverse;
+        }
+        }
+        &__heading {
+        @include flexBox (flex, space-between, center);
+        }
+        &__tag,
+        &__date {
+        font-size: 12px;
+        line-height: 20px;
+        margin: 0 0 25px 0;
+        }
+        &__title {
+        margin-bottom: 20px;
+        }
+    }
+    &__heading {
+        @include flexBox (flex, space-between, normal);
+    }
+    &__tag,
+    &__date {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 40px;
+        margin-bottom: 20px;
+        @media screen and (max-width: 768px) {
+            font-size: 22px;
+            line-height: 36px;
+        }
+    }
+}
+.btn {
+    font-family: $font_family_main;
+    @include fontMain ($font_size_main, 700, 27px, 0.1em, #fff);
+    background-color: #565656;
+    border: #565656;
+    padding: 10px 45px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 55px;
+}
+.info {
+    @include flexBox (flex, space-between, normal);
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+    &__header {
+        flex-basis: 50%;
+        margin: 0;
+        font-family: 'Red Hat Display', sans-serif;
+        @include fontMain (23px, 400, 38px, 0.1em, #000000);
+        padding-right: calc(50vw - 605px);
+        @media screen and (max-width: 768px) {
+            flex-basis: 100%;
+            padding: 0;
+        }
+    }
+    &__text {
+        font-family: $font_family_main;
+        @include fontMain (19px, $font_family_main, 32px, 0.05em, $font_color_main);
+        flex-basis: 50%;
+        padding-left: calc(50vw - 605px);
+        @media screen and (max-width: 768px) {
+            flex-basis: 100%;
+            padding: 0;
+            text-align: right;
+        }
+        @media screen and (max-width: 320px) {
+            text-align: left;
+        }
+    }
+    &__paragraph {
+        margin: 0;
+    }
+}
+.footer {
+    background-color: #F4F4F4;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    &__wrapper {
+        @include flexBox (flex, space-between, center);
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+    }
+    &__contacts {
+        @media screen and (max-width: 768px){
+            margin-bottom: 35px;
+        }
+    }
+    &__contact-header {
+        font-family: 'Red Hat Display', sans-serif;
+        @include fontMain (48px, 400, 64px, 0.05em, #000000);        
+        margin: 0;
+        margin-bottom: 30px;
+        @media screen and (max-width: 768px){
+            text-align: center;
+        }
+    }
+    &__contact {
+        line-height: 27px;
+        letter-spacing: 0.1em;
+        color: #000;
+        margin-bottom: 15px;
+        @media screen and (max-width: 768px){
+            text-align: center;
+        }
+    }
+    &__socials {
+        @include flexBox (flex, space-between, normal);
+        gap: 23px;
+    }
+    &__social {
+        width: 50px;
+        height: 50px;
+    }
+    &__copyrights {
+        @include fontMain (12px, 400, 20px, 0.1em, #000);
+        text-align: center;
+        margin: 0;
+    }
+}
+

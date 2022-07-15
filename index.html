@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+            <img src="./img/logo.png" alt="logo">
+            <nav class="nav">
+                <input class="nav__burger" id="nav-burger" type="checkbox">
+                <label for="nav-burger" class="nav__burger-img">
+                </label>
+                <ul class="nav__menu menu">
+                    <li class="menu__item">
+                        <a href="./index.html" class="menu__link menu__current">
+                            home
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="" class="menu__link">
+                            about
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="" class="menu__link">
+                            works
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="" class="menu__link">
+                            blog
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="" class="menu__link">
+                            contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search">
+                <img class="search__image" src="./img/search.svg" alt="search">
+                <form class="search__form" action="/action_page.php">
+                    <input class="search__input" type="text" placeholder="Search.." name="search">
+                    <button class="search__button" type="submit"><img src="./img/search.svg" alt="search"></button>
+                </form>
+            </div>
+    </header>
+    <main class="main">
+        <section class="banner">
+            <p class="banner__title section-title_banner">Manifest is a newborn theme.<br>
+                Clean, simple and fast.</p>
+        </section>
+        <section class="section-1">
+            <h1 class="section-title section-title_main">Blog</h1>
+            <article class="section-1__article article">
+                <div class="article__picture">
+                    <img class="article__img" src="./img/blog-img1.png" alt="blog-img1">
+                </div>
+                <div class="article__text">
+                    <div class="article__text_width-right">
+                        <p class="article__tag"> Technology, Interface Design</p>
+                        <h3 class="article__title">Using UX Design to Build a Sustainable Future
+                        </h3>
+                        <p class="article__date">6 May, 2020</p>
+                        <p class="article__paragraph">Transformation has to be driven by everybody, not just by climate groups, and we have a responsibility to use our influence to drive this. 
+                            <a class="article__link" href="#">
+                                <img src="./img/arrow.svg" alt="arrow">
+                            </a> 
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="section-1__article article article_right">
+                <div class="article__picture">
+                    <img class="article__img" src="./img/blog-img2.png" alt="blog-img2">
+                </div>
+                <div class="article__text">
+                    <div class="article__text_width-left">
+                        <p class="article__tag"> Technology, Interface Design</p>
+                        <h3 class="article__title">Using UX Design to Build a Sustainable Future</h3>
+                        <p class="article__date">6 May, 2020</p>
+                        <p class="article__paragraph">Transformation has to be driven by everybody, not just by climate groups, and we have a responsibility to use our influence to drive this. 
+                            <a class="article__link" href="#">
+                                <img src="./img/arrow.svg" alt="arrow">
+                            </a> 
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="section-2">
+            <h2 class="section-title">Latest Posts 
+                <a class="section-title__link" href="#">View All <img src="./img/arrow.svg" alt="arrow">
+                </a>
+            </h2>
+            <div class="section-2__articles">
+                <article class="section-2__article article">
+                    <div class="article__picture_column">
+                        <img class="article__img" src="./img/section2_image1.png" alt="blog-img1">
+                    </div>
+                    <div class="article__text_column">
+                        <div class="section-2__heading">
+                            <p class="article__tag section-2__tag">Interface Design </p>
+                            <p class="article__date section-2__date">8 June, 2020</p>
+                        </div>
+                        <h3 class="article__title section-2__title">UX traffic light colours</h3>
+                        <p class="article__paragraph">
+                            UI has to make a huge visual difference between warning, an alert and a success.
+                        </p>
+                    </div>
+                </article>
+                <article class="section-2__article article section-2__article_right">
+                    <div class="article__picture_column">
+                        <img class="article__img" src="./img/section2_image2.png" alt="blog-img2">
+                    </div>
+                    <div class="article__text_column">
+                        <div class="section-2__heading">
+                            <p class="article__tag section-2__tag"> Technology</p>
+                            <p class="article__date section-2__date">6 May, 2020</p>
+                        </div>
+                        <h3 class="article__title section-2__title">Using UX Design to Build a Sustainable Future</h3>
+                        <p class="article__paragraph">
+                            UI has to make a huge visual difference between warning, an alert and a success.
+                        </p>
+                    </div>
+                </article>
+                <article class="section-2__article article article_column">
+                    <div class="article__picture_column">
+                        <img class="article__img" src="./img/section2_image3.png" alt="blog-img2">
+                    </div>
+                    <div class="article__text_column">
+                        <div class="section-2__heading">
+                            <p class="article__tag section-2__tag">Visual Design</p>
+                            <p class="article__date section-2__date">8 June, 2020</p>
+                        </div>
+                        <h3 class="article__title section-2__title">Creativity vs. UX</h3>
+                        <p class="article__paragraph">
+                            Is it possible to create a delightful user experience without following best UX practices?
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="section-3">
+            <h2 class="section-title">The Most Popular 
+                <a class="section-title__link" href="#">View All <img src="./img/arrow.svg" alt="arrow">
+                </a>
+            </h2>
+            <div class="section-3__articles">
+                <article class="section-3__article article">
+                    <div class="article__picture_column">
+                        <img class="article__img" src="./img/section3_image1.png" alt="blog-img1">
+                    </div>
+                    <div class="article__text_column">
+                        <div class="section-3__heading">
+                            <p class="article__tag section-3__tag">Interface Design </p>
+                            <p class="article__date section-3__date">8 June, 2020</p>
+                        </div>
+                        <h3 class="article__title section-3__title">Mentorship Match — How a simple LinkedIn feature can boost diversity</h3>
+                        <p class="article__paragraph">
+                            LinkedIn is on a clear mission to make professionals more successful by connecting the global workforce and as we learned — diversity and success go hand in hand
+                        </p>
+                    </div>
+                </article>
+                <article class="section-3__article article">
+                    <div class="article__picture_column">
+                        <img class="article__img" src="./img/section3_image2.png" alt="blog-img2">
+                    </div>
+                    <div class="article__text_column">
+                        <div class="section-3__heading">
+                            <p class="article__tag section-3__tag">Visual Design</p>
+                            <p class="article__date section-3__date">8 June, 2020</p>
+                        </div>
+                        <h3 class="article__title section-3__title">Creativity vs. UX</h3>
+                        <p class="article__paragraph">
+                            Is it possible to create a delightful user experience without following best UX practices?
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <button class="btn">Load More</button>
+        </section>
+        <section class="section-4 info">
+            <h4 class="info__header">Full-time UI/UX designer <br>
+                Head of Design at VeronaLabs.com <br>
+                <img src="./img/arrow.svg" alt="arrow">
+            </h4>
+            <div class="info__text">
+                <p class="info__paragraph"> We work with clients around the world from our headquarters in Charleston, South Carolina.</p>
+                <br>
+                <p class="info__paragraph">We focus on naming, branding, brand narratives, website design and development, and brand experiences.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper">
+            <div class="footer__contacts">
+                <h5 class="footer__contact-header">Need a project?</h5>
+                <p class="footer__contact">(239) 555-0108</p>
+                <p class="footer__contact">tanya.hill@example.com</p>
+            </div>
+            <div class="footer__socials">
+                <a href="#">
+                    <svg class="footer__social">
+                        <use xlink:href="./img/sprite.svg#instagram"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="footer__social">
+                        <use xlink:href="./img/sprite.svg#facebook"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="footer__social">
+                        <use xlink:href="./img/sprite.svg#twitter"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="footer__social">
+                        <use xlink:href="./img/sprite.svg#linkedin"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <p class="footer__copyrights">© Copyright Manifest Theme. Allrights reserved</p>
+    </footer>
+</body>
+</html>
